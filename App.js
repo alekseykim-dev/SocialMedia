@@ -129,7 +129,7 @@ const App = () => {
   const [userStoriesRenderedData, setUserStoriesRenderedData] = useState([]);
   const [isLoadingUserStories, setIsLoadingUserStories] = useState(false);
 
-  const userPostsPageSize = 4;
+  const userPostsPageSize = 2;
   const [userPostsCurrentPage, setUserPostsCurrentPage] = useState(1);
   const [userPostsRenderedData, setUserPostsRenderedData] = useState([]);
   const [isLoadingUserPosts, setIsLoadingUserPosts] = useState(false);
@@ -148,6 +148,11 @@ const App = () => {
     const getInitialData = pagination(userStories, 1, userStoriesPageSize);
     setUserStoriesRenderedData(getInitialData);
     setIsLoadingUserStories(false);
+
+    setIsLoadingUserPosts(true);
+    const getInitialDataPosts = pagination(userPosts, 1, userPostsPageSize);
+    setUserPostsRenderedData(getInitialDataPosts);
+    setIsLoadingUserPosts(false);
   }, []);
   return (
     <SafeAreaView>
@@ -172,7 +177,7 @@ const App = () => {
                 <FlatList
                   onEndReachedThreshold={0.5}
                   onEndReached={() => {
-                    console.log('Rendering next page');
+                    console.log('Rendering next story page');
                     if (isLoadingUserStories) return;
                     setIsLoadingUserStories(true);
                     const contentToAppend = pagination(
@@ -204,7 +209,23 @@ const App = () => {
             </>
           }
           showsVerticalScrollIndicator={false}
-          data={userPosts}
+          onEndReachedThreshold={0.5}
+          onEndReached={() => {
+            console.log('Rendering next post page');
+            if (isLoadingUserStories) return;
+            setIsLoadingUserPosts(true);
+            const contentToAppend = pagination(
+              userPosts,
+              userPostsCurrentPage + 1,
+              userPostsPageSize,
+            );
+            if (contentToAppend.length > 0) {
+              setUserPostsCurrentPage(userPostsCurrentPage + 1);
+              setUserPostsRenderedData(prev => [...prev, ...contentToAppend]);
+            }
+            setIsLoadingUserPosts(false);
+          }}
+          data={userPostsRenderedData}
           renderItem={({item}) => (
             <View style={globalStyle.userPostContainer}>
               <UserPost
