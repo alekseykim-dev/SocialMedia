@@ -24,7 +24,7 @@ const globalStyle = StyleSheet.create({
     top: 12,
   },
   messageNumer: {
-    color: 'ffffff',
+    color: '#ffffff',
     fontSize: 6,
     fontFamily: getFontFamily('Inter, "600'),
   },
