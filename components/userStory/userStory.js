@@ -6,7 +6,10 @@ import UserProfileImage from '../UserProfileImage/UserProfileImage';
 const UserStory = props => {
   return (
     <View style={style.useStoryContainer}>
-      <UserProfileImage profileImage={props.profileImage} imageDimensions={65} />
+      <UserProfileImage
+        profileImage={props.profileImage}
+        imageDimensions={65}
+      />
       <Text style={style.firstName}>{props.firstName}</Text>
     </View>
   );
