@@ -3,6 +3,7 @@ import {
   FlatList,
   SafeAreaView,
   Text,
+  
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -10,7 +11,7 @@ import {getFontFamily} from './assets/fonts/helper';
 import Title from './components/Title/Title';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import globalStyle from './assets/styles/style';
+import globalStyle from './assets/styles/globalStyle.js';
 import UserStory from './components/userStory/userStory';
 import UserPost from './components/UserPost/UserPost';
 const App = () => {

@@ -24,9 +24,8 @@ const UserPost = props => {
             imageDimensions={48}
           />
           <View style={style.userTextContainer}>
-            <Text style={style.userName}>{props.firstName}</Text>
-            {props.location && (
-              <Text style={style.location}> {props.location}</Text>
+            <Text style={style.userName}>{props.firstName}</Text>{props.location && (
+              <Text style={style.location}>{props.location}</Text>
             )}
           </View>
         </View>
