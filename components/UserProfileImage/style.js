@@ -3,8 +3,8 @@ import {getFontFamily} from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
   userImageContainer: {
-    borderColor: '#F35BAC',
-    borderWidth: 1,
+    borderColor: 'lightgreen',
+    borderWidth: 1.5,
     padding: 3,
     borderRadius: 50,
   },

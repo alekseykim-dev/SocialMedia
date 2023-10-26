@@ -9,6 +9,8 @@ import {
   faHeart,
   faMessage,
   faBookmark,
+  faPaperPlane,
+  faComment,
 } from '@fortawesome/free-regular-svg-icons';
 
 const UserPost = props => {
@@ -22,9 +24,7 @@ const UserPost = props => {
             imageDimensions={48}
           />
           <View style={style.userTextContainer}>
-            <Text style={style.userName}>
-              {props.firstName} {props.lastName}
-            </Text>
+            <Text style={style.userName}>{props.firstName}</Text>
             {props.location && (
               <Text style={style.location}> {props.location}</Text>
             )}
@@ -36,17 +36,23 @@ const UserPost = props => {
         <Image source={props.image} />
       </View>
       <View style={style.userPostStats}>
-        <View style={style.userPostStatsButton}>
-          <FontAwesomeIcon icon={faHeart} color={'#79869F'} />
-          <Text style={style.userPostStatsText}>{props.likes}</Text>
+        <View style={{flexDirection: 'row'}}>
+          <View style={style.userPostStatsButton}>
+            <FontAwesomeIcon icon={faHeart} color={'#000'} size={23} />
+            {/* <Text style={style.userPostStatsText}>{props.likes}</Text> */}
+          </View>
+          <View style={style.userPostStatsButtonRight}>
+            <FontAwesomeIcon icon={faComment} color={'#000'} size={23} />
+            {/* <Text style={style.userPostStatsText}>{props.comments}</Text> */}
+          </View>
+          <View style={style.userPostStatsButtonRight}>
+            <FontAwesomeIcon icon={faPaperPlane} color={'#000'} size={21} />
+            {/* <Text style={style.userPostStatsText}></Text> */}
+            {/* <Text style={style.userPostStatsText}>{props.bookmarks}</Text> */}
+          </View>
         </View>
-        <View style={style.userPostStatsButtonRight}>
-          <FontAwesomeIcon icon={faMessage} color={'#79869F'} />
-          <Text style={style.userPostStatsText}>{props.comments}</Text>
-        </View>
-        <View style={style.userPostStatsButtonRight}>
-          <FontAwesomeIcon icon={faBookmark} color={'#79869F'} />
-          <Text style={style.userPostStatsText}>{props.bookmarks}</Text>
+        <View style={{flexDirection: 'row'}}>
+          <FontAwesomeIcon icon={faBookmark} color={'#000'} size={23} />
         </View>
       </View>
     </View>
