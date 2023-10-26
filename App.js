@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
   Platform,
+  StatusBar,
 } from 'react-native';
 import {getFontFamily} from './assets/fonts/helper';
 import Title from './components/Title/Title';
@@ -136,8 +137,8 @@ const App = () => {
   const [userPostsRenderedData, setUserPostsRenderedData] = useState([]);
   const [isLoadingUserPosts, setIsLoadingUserPosts] = useState(false);
 
-  const [isOn, setIsOn] = useState(false);
-  console.log(Platform);
+  // const [isOn, setIsOn] = useState(false);
+  // console.log(Platform);
   const pagination = (database, currentPage, pageSize) => {
     console.log(`Current Page is ${currentPage}`);
     const startIndex = (currentPage - 1) * pageSize;
@@ -160,6 +161,7 @@ const App = () => {
   }, []);
   return (
     <SafeAreaView>
+      <StatusBar backgroundColor={'red'} barStyle={'dark-content'} />
       <View>
         <FlatList
           ListHeaderComponent={
@@ -177,7 +179,7 @@ const App = () => {
                   </View>
                 </TouchableOpacity>
               </View>
-              <View
+              {/* <View
                 style={{
                   flex: 1,
                   flexDirection: 'row',
@@ -199,7 +201,7 @@ const App = () => {
                     }
                   }
                 />
-              </View>
+              </View> */}
               <View style={globalStyle.useStoryContainer}>
                 <FlatList
                   onEndReachedThreshold={0.5}
