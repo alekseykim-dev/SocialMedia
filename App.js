@@ -212,7 +212,7 @@ const App = () => {
           onEndReachedThreshold={0.5}
           onEndReached={() => {
             console.log('Rendering next post page');
-            if (isLoadingUserStories) return;
+            if (isLoadingUserPosts) return;
             setIsLoadingUserPosts(true);
             const contentToAppend = pagination(
               userPosts,
