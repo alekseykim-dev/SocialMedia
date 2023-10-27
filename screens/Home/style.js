@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
-import {getFontFamily} from '../fonts/helper';
-import { horizontalScale, verticalScale } from './scaling';
+import {getFontFamily} from '../../assets/fonts/helper';
+import {horizontalScale, verticalScale} from '../../assets/styles/scaling';
 
-const globalStyle = StyleSheet.create({
+const style = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -38,4 +38,4 @@ const globalStyle = StyleSheet.create({
   },
 });
 
-export default globalStyle;
+export default style;
