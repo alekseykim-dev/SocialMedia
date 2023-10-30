@@ -30,8 +30,9 @@ const style = StyleSheet.create({
     fontFamily: getFontFamily('Inter, "600'),
   },
   useStoryContainer: {
+    width: '100%',
     marginTop: verticalScale(20),
-    marginHorizontal: horizontalScale(28),
+    marginHorizontal: horizontalScale(15),
   },
   userPostContainer: {
     marginHorizontal: horizontalScale(24),
