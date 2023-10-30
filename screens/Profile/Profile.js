@@ -9,14 +9,15 @@ import {
 } from 'react-native';
 import globalStyle from '../../assets/styles/global.style';
 import style from './style';
+import {ProfileTabsNavigation} from '../../navigation/MainNavigation';
 
 const Profile = ({navigation}) => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <View style={style.profleImageContainer}>
-        <View style={style.profleImageContent}>
+      <View style={style.profileImageContainer}>
+        <View style={style.profileImageContent}>
           <Image
-            style={style.profleImage}
+            style={style.profileImage}
             source={require('../../assets/images/default_profile.png')}
           />
         </View>
@@ -37,6 +38,9 @@ const Profile = ({navigation}) => {
           <Text style={style.statAmount}>100</Text>
           <Text style={style.statType}>Posts</Text>
         </View>
+      </View>
+      <View style={globalStyle.flex}>
+        <ProfileTabsNavigation />
       </View>
       <ScrollView contentContainerStyle={globalStyle.flexGrow} />
     </SafeAreaView>

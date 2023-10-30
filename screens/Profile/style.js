@@ -3,17 +3,17 @@ import {horizontalScale, verticalScale} from '../../assets/styles/scaling';
 import {getFontFamily} from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
-  profleImage: {
+  profileImage: {
     width: horizontalScale(120),
     height: verticalScale(110),
   },
-  profleImageContainer: {
+  profileImageContainer: {
     // flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: verticalScale(32),
   },
-  profleImageContent: {
+  profileImageContent: {
     borderWidth: 1,
     borderBlockColor: '#0150EC',
     padding: horizontalScale(4),
@@ -44,7 +44,6 @@ const style = StyleSheet.create({
     paddingVertical: verticalScale(30),
     borderBottomWidth: 1,
     borderColor: '#E9EFF1',
-
   },
   statBorder: {
     borderRightWidth: 1,
