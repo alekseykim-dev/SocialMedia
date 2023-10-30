@@ -12,7 +12,8 @@ const Drawer = createDrawerNavigator();
 
 const MainMenuNavigation = () => {
   return (
-    <Drawer.Navigator screenOptions={{header: () => null, headerShown: false}}>
+    // header slide button show/hide func
+    <Drawer.Navigator screenOptions={{header: () => null, headerShown: false}}> 
       <Drawer.Screen name={Routes.Home} component={Home} />
       <Drawer.Screen name={Routes.Profile} component={Profile} />
 
